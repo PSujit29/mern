@@ -59,19 +59,19 @@ switch (day) {
 // Write code to compute and display the bill amount for the given unitConsumed.
 
 const unitConsumed = 320
-let price = 0 // handle the base case
+let billAmount = 0 // handle the base case
 if (unitConsumed <= 20) {
-    price = 80
+    billAmount = 80
 } else if (unitConsumed <= 40) {
-    price = 80 + (unitConsumed - 20) * 5
+    billAmount = 80 + (unitConsumed - 20) * 5
 } else if (unitConsumed <= 70) {
-    price = 80 + 20 * 5 + (unitConsumed - 40) * 7.5
+    billAmount = 80 + 20 * 5 + (unitConsumed - 40) * 7.5
 } else if (unitConsumed <= 120) {
-    price = 80 + 20 * 5 + 30 * 7.5 + (unitConsumed - 70) * 12
+    billAmount = 80 + 20 * 5 + 30 * 7.5 + (unitConsumed - 70) * 12
 } else if (unitConsumed <= 220) {
-    price = 80 + 20 * 5 + 30 * 7.5 + 50 * 12 + (unitConsumed - 120) * 20
+    billAmount = 80 + 20 * 5 + 30 * 7.5 + 50 * 12 + (unitConsumed - 120) * 20
 } else {
-    price = 80 + 20 * 5 + 30 * 7.5 + 50 * 12 + 100 * 20 + (unitConsumed - 220) * 25
+    billAmount = 80 + 20 * 5 + 30 * 7.5 + 50 * 12 + 100 * 20 + (unitConsumed - 220) * 25
 }
 
-console.log("price = ", price);
+console.log(`billAmount =  ${billAmount}`)
