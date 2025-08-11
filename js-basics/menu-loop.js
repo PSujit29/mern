@@ -1,7 +1,7 @@
 const categories =[
     {
         id:1,
-        name:"parts and machinary",
+        name:"veichles",
     },
     {
         id:2,
