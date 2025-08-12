@@ -56,9 +56,9 @@ const categories = [
 // TODO:
 // complete the undesired nested loop to print out the hierarchical vategories with proper nesting
 
-const printTabs = (count) =>{
+const printTabs = (count) => {
     tabs = ""
-    for(let i = 0; i<count;i++){
+    for (let i = 0; i < count; i++) {
         tabs += "\t"
     }
     return tabs
@@ -66,16 +66,16 @@ const printTabs = (count) =>{
 const showItems = (items, n) => {
     for (const obj of items) {
         // console.log('\t')
-        if (obj.children == null) {
-            n--;
-            continue;
+        if (obj.children != null) {
+            console.log(`${printTabs(n)}${obj.id}: ${obj.name}`)
+            n++
+            showItems(obj.children, n)
         }
         else {
-            n++
             console.log(`${printTabs(n)}${obj.id}: ${obj.name}`)
-            showItems(obj.children,n)
+            n--;
         }
     }
 }
 
-showItems(categories, n=0)
+showItems(categories, n = 0)
