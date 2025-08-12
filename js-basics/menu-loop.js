@@ -1,3 +1,13 @@
+
+// for (const el of categories) {
+//     console.log(`${el.id}. ${el.name}`);
+// }
+
+// for (const i in categories) {
+//     let el = categories[i];
+//     console.log(`${el.id}. ${el.name}`);
+// }
+
 const categories = [
     {
         id: 1,
@@ -11,7 +21,18 @@ const categories = [
             {
                 id: 3,
                 name: "Laptops",
-                children: null
+                children: [
+                    {
+                        id: 7,
+                        name: "lenovo",
+                        children: null
+                    },
+                    {
+                        id: 8,
+                        name: "asus",
+                        children: null
+                    }
+                ]
             }
         ]
     },
@@ -32,15 +53,29 @@ const categories = [
         ]
     }
 ];
-
-for (const el of categories) {
-    console.log(`${el.id}. ${el.name}`);
-}
-
-for (const i in categories) {
-    let el = categories[i];
-    console.log(`${el.id}. ${el.name}`);
-}
-
 // TODO:
-// complete the undesired nested loop to print out the hierarchical vategories
+// complete the undesired nested loop to print out the hierarchical vategories with proper nesting
+
+const printTabs = (count) =>{
+    tabs = ""
+    for(let i = 0; i<count;i++){
+        tabs += "\t"
+    }
+    return tabs
+}
+const showItems = (items, n) => {
+    for (const obj of items) {
+        // console.log('\t')
+        if (obj.children == null) {
+            n--;
+            continue;
+        }
+        else {
+            n++
+            console.log(`${printTabs(n)}${obj.id}: ${obj.name}`)
+            showItems(obj.children,n)
+        }
+    }
+}
+
+showItems(categories, n=0)
