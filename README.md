@@ -1,2 +1,5 @@
 # mern
-i learn mern stack. 
+
+i learn mern stack.
+
+negative comment
