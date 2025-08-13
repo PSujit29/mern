@@ -53,6 +53,7 @@ const categories = [
         ]
     }
 ];
+
 // TODO:
 // complete the undesired nested loop to print out the hierarchical vategories with proper nesting
 
