@@ -1,31 +1,84 @@
-// function call before initialization
-console.log(`This is before function`)
-sayHello()
-sayHello("Sujit")
+// SOLID prnciple
+// single responsibility principle
+// must do single Worker. task only
+// open close principle
+//no change to the working code
+// liskov substitution principle
+//new changeas must not break your code
+// interface segregation prinnciple
+// module. function breakdown
+// dependency inversion principle
+// required files to nyour code becomes your dependency
 
-// =====================
-// function declaration
-// =====================
 
-function sayHello(user= "User"){
-    console.log(`Hello, ${user}`)
+
+const returnDayByNumber = (dayNum) => {
+    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+    if (dayNum >= 0 && dayNum <= 6) {
+        return days[dayNum]
+    }
+    else if (dayNum > 6) {
+        return days[dayNum % 7]
+    }
+    else{
+        console.log("Try learn counting before programming !")
+        return "Unknown Negative Day"
+    }
 }
-console.log(`This is after function`)
-// function call aafter defination
-sayHello()
-sayHello("Sujit")
+
+console.log(returnDayByNumber(-1))
+console.log(returnDayByNumber(0))
+console.log(returnDayByNumber(5))
+console.log(returnDayByNumber(7))
+console.log(returnDayByNumber(8))
+
+
+// // function call before initialization
+// console.log(`This is before function`)
+// sayHello()
+// sayHello("Sujit")
+
+// // =====================
+// // function declaration
+// // =====================
+
+// function sayHello(user = "User") {
+//     console.log(`Hello, ${user}`)
+// }
+// console.log(`This is after function`)
+// // function call aafter defination
+// sayHello()
+// sayHello("Sujit")
+
+
+// // =====================
+// // Arrow function
+// // =====================
+
+// // sayBye() //throw error
+// // sayBye("Sujit") //throw error
+// const sayBye = (user = "User") => {
+//     console.log(`Bye, ${user}`)
+// }
+// sayBye()
+// sayBye("Sujit")
 
 
 // =====================
-// Arrow function
+// Logical & Difficult Question for Practice
 // =====================
 
-// sayBye() //throw error
-// sayBye("Sujit") //throw error
-const sayBye = (user = "User")=>{
-    console.log(`Bye, ${user}`)
-}
-sayBye()
-sayBye("Sujit")
-
+// Write a function that takes an array of student objects, where each object contains a student's name and an array of their scores.
+// The function should return the name(s) of the student(s) with the highest average score.
+// If multiple students have the same highest average, return all their names in an array.
+//
+// Example Input:
+// const students = [
+//   { name: "Alice", scores: [90, 85, 88] },
+//   { name: "Bob", scores: [92, 81, 85] },
+//   { name: "Charlie", scores: [90, 85, 88] }
+// ];
+//
+// Expected Output:
+// ["Alice", "Charlie"]
 
