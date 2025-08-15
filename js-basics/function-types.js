@@ -22,3 +22,20 @@ const userObject = {
 userObject.getName()
 userObject.getAddress()
 userObject.getEmail()
+
+
+
+const getValue = () => {
+    return 1
+}
+
+const showValue = (x) => {
+    console.log(`the value of x = ${x}`)
+}
+
+let val = getValue()
+showValue(val)
+
+
+
+// closure function
