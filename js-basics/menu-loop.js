@@ -48,17 +48,31 @@ const categories = [
             {
                 id: 6,
                 name: "Women",
-                children: null
+                children: [
+                    {
+                        id: 9,
+                        name: "leggings",
+                        children: null
+                    },
+                    {
+                        id: 10,
+                        name: "saari",
+                        children: null
+                    }
+                ]
             }
         ]
+    },
+    {
+        id: 11,
+        name: "foods",
+        children: null
     }
 ];
 
 // TODO:
 // complete the undesired nested loop to print out the hierarchical vategories with proper nesting
-
 const printTabs = (count) => "\t".repeat(count)
-
 const showItems = (items, level = 0) => {
     for (const obj of items) {
         console.log(`${printTabs(level)}${obj.id}: ${obj.name}`)
@@ -69,3 +83,15 @@ const showItems = (items, level = 0) => {
 }
 
 showItems(categories)
+
+// =====================
+// prints number without loop
+// =====================
+const showNum = (n) => {
+    if (n > 10) { return }
+    else {
+        console.log(n)
+        showNum(n + 1)
+    }
+}
+showNum(1)
