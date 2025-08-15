@@ -11,26 +11,29 @@
 // required files to nyour code becomes your dependency
 
 
+// =====================
+// returning day by passing number
+// =====================
 
-const returnDayByNumber = (dayNum) => {
-    const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
-    if (dayNum >= 0 && dayNum <= 6) {
-        return days[dayNum]
-    }
-    else if (dayNum > 6) {
-        return days[dayNum % 7]
-    }
-    else{
-        console.log("Try learn counting before programming !")
-        return "Unknown Negative Day"
-    }
-}
+// const returnDayByNumber = (dayNum) => {
+//     const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday']
+//     if (dayNum >= 0 && dayNum <= 6) {
+//         return days[dayNum]
+//     }
+//     else if (dayNum > 6) {
+//         return days[dayNum % 7]
+//     }
+//     else {
+//         console.log("Try learn counting before programming !")
+//         return "Unknown Negative Day"
+//     }
+// }
 
-console.log(returnDayByNumber(-1))
-console.log(returnDayByNumber(0))
-console.log(returnDayByNumber(5))
-console.log(returnDayByNumber(7))
-console.log(returnDayByNumber(8))
+// console.log(returnDayByNumber(-1))
+// console.log(returnDayByNumber(0))
+// console.log(returnDayByNumber(5))
+// console.log(returnDayByNumber(7))
+// console.log(returnDayByNumber(8))
 
 
 // // function call before initialization
@@ -74,11 +77,40 @@ console.log(returnDayByNumber(8))
 //
 // Example Input:
 // const students = [
-//   { name: "Alice", scores: [90, 85, 88] },
-//   { name: "Bob", scores: [92, 81, 85] },
-//   { name: "Charlie", scores: [90, 85, 88] }
+//     { name: "Alice", scores: [90, 85, 88] },
+//     { name: "Bob", scores: [92, 81, 85] },
+//     { name: "Charlie", scores: [90, 85, 88] }
 // ];
 //
 // Expected Output:
 // ["Alice", "Charlie"]
 
+
+// solution: 
+const students = [
+    { name: "Alice", scores: [90, 85, 88] },
+    { name: "Bob", scores: [92, 81, 85] },
+    { name: "Charlie", scores: [90, 85, 88] }
+];
+const calculateAverage = (marks) => {
+    return marks.reduce((accumulator, currentValue) => accumulator + currentValue, 0) / marks.length;
+}
+const returnTopper = (students) => {
+
+    const newStudents = Array.from(students)
+    let toppers = []
+    let max = -Infinity
+
+    for (const student of newStudents) {
+        let average = calculateAverage(student.scores)
+        max = (max < average) ? average : max
+        student.average = average
+    }
+
+    for (const student of newStudents) {
+        if (student.average == max) toppers.push(student.name)
+    }
+    return toppers
+}
+
+console.log((returnTopper(students)))
