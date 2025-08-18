@@ -47,7 +47,7 @@ console.log(result)
 
 
 
-const numArr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+const numArr = [1, 22, 3, 4, 15, -6, 17, 8, -9, 10]
 let divByThree = numArr.filter(num => num % 3 === 0)
 console.log(divByThree)
 
@@ -57,3 +57,14 @@ console.log(max)
 
 let sum = numArr.reduce((acc, curr) => acc + curr, 0)
 console.log(sum)
+
+
+let min = 10
+let resVal = numArr.every((val) => min >= val)
+console.log(resVal)
+resVal = numArr.some((val) => min >= val)
+console.log(resVal)
+
+let vals = [1,2,2,1,3,4,4,3,2,2,4,2,3,3,1,1,2]
+let uniqueVals = [... new Set(vals)]
+console.log(uniqueVals)
