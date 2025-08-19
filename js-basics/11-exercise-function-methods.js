@@ -69,7 +69,7 @@ let employees = [
   { name: 'David', department: 'Sales' },
   { name: 'Eva', department: 'Engineering' }
 ];
-const engineeringEmployees = employees.filter(emp => emp.department === 'Engineering')
+let engineeringEmployees = employees.filter(emp => emp.department === 'Engineering')
 console.log(engineeringEmployees)
 //
 // 6. From a transaction list, filter only failed transactions (status = "FAILED").
