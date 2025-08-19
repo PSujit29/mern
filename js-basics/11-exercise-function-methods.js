@@ -166,10 +166,15 @@ const aboveHundredItem = cart.filter(item => item.subtotal > 100)
 console.log(aboveHundredItem)
 
 console.log("\n-----bill----")
-console.log("item\tprice\tquantity\tsubtotal")
-cart.forEach((item) => {
-  console.log(`${item.product}\t${item.price}\t${item.quantity}\t${item.subtotal}`)
-})
+console.log("item".padEnd(10), "price".padEnd(8), "quantity".padEnd(10), "subtotal".padEnd(10));
+cart.forEach(item => {
+  console.log(
+    item.product.padEnd(10),
+    String(item.price).padEnd(8),
+    String(item.quantity).padEnd(10),
+    String(item.subtotal).padEnd(10)
+  );
+});
 console.log("-------------")
 console.log("total: ", totalcartValue)
 
