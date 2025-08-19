@@ -45,16 +45,24 @@ Industry Standard Practice: forEach, map, filter, reduce
 // 🔹 map (transforming data)
 // 3. Convert an array of product prices in USD to EUR using a fixed conversion rate.
 // solution:
-console.log("solution to map q1:")
-const pricesInUSD = [12.3, 10, 9.99, 500, 33.80]
-const conversionRate = 0.86 //1 usd == 0.86 eur
-const pricesInEUR = pricesInUSD.map(price => Number((price * conversionRate).toFixed(2)))
-console.log("Price in USD: ", pricesInUSD)
-console.log("Price in EUR: ", pricesInEUR)
+// console.log("solution to map q1:")
+// const pricesInUSD = [12.3, 10, 9.99, 500, 33.80]
+// const conversionRate = 0.86 //1 usd == 0.86 eur
+// const pricesInEUR = pricesInUSD.map(price => Number((price * conversionRate).toFixed(2)))
+// console.log("Price in USD: ", pricesInUSD)
+// console.log("Price in EUR: ", pricesInEUR)
 
 // 4. Given an array of file names like ["report.docx", "photo.png"], map them to their extensions ["docx", "png"].
 // solution
-
+// const fileNames = ["report.docx", "photo.png"]
+// const fileExtensions = fileNames.map((file) => {
+//     const parts = file.split('.');
+//     if (parts.length > 1) {
+//         return parts.pop();
+//     }
+//     return '';
+// })
+// console.log("Filenames: ", fileNames, "\ncorresponding extensions: ", fileExtensions)
 
 /*
 🔹 filter (selecting data)
