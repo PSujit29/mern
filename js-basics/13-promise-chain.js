@@ -52,23 +52,39 @@ const func4 = async (x) => {
 //     })
 
 
+// promise chaining
+// func1(true)
+//     .then(res1 => {
+//         console.log(res1)
+//         return func2(true)
+//     })
+//     .then(res2 => {
+//         console.log(res2)
+//         return func3(false)
+//     })
+//     .then(res3 => {
+//         console.log(res3)
+//         return func4(true)
+//     })
+//     .then(res4 => {
+//         console.log(res4)
+//     })
+//     .catch(exception => {
+//         console.log(exception)
+//     })
 
-func1(true)
-    .then(res1 => {
-        console.log(res1)
-        return func2(true)
-    })
-    .then(res2 => {
-        console.log(res2)
-        return func3(false)
-    })
-    .then(res3 => {
-        console.log(res3)
-        return func4(true)
-    })
-    .then(res4 => {
-        console.log(res4)
+
+
+// TODO: look at home
+// example uplloading 5 files by user. accept only if successfully uploaded files else not upload file if even 1 is not uploaded
+let listPromises = [func1(true), func2(true), func3(true), func4(true)]
+Promise.all(listPromises)
+    .then((result) => {
+        console.log(result)
     })
     .catch(exception => {
         console.log(exception)
     })
+
+Promise.allSettled()
+Promise.race()
