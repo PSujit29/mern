@@ -172,6 +172,14 @@ console.log("total cart value = ", totalcartValue)
 const aboveHundredItem = cart.filter(item => item.price >= 100)
 console.log(aboveHundredItem)
 
+cart.forEach((item)=>{
+    console.log("\n-----bill----")
+    console.log("item: ", item.product)
+    console.log("price: ", item.price)
+    console.log("quantity: ", item.quantity)
+    console.log("-------------")
+    console.log("total: ",item.subtotal)
+})
 /*
 --------------------------
 Stage 3: Stretch Challenge (realistic project)
