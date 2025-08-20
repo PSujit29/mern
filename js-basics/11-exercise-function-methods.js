@@ -213,6 +213,7 @@ const analyticsLog = [
 
 // remove bots
 let antiBotLogs = analyticsLog.filter(log => log.duration > 3)
+console.log(antiBotLogs)
 
 //extracting page field
 let pageField = antiBotLogs.map(log => log.page)
